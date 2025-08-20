@@ -207,6 +207,8 @@
     <Content Include="security.png" />
     <Content Include="settings.png" />
     <Content Include="write.png" />
+    <Content Include="Assets\icon_bgfree.png" />
+    <Content Include="icon_bgfree.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -249,6 +249,9 @@
     <ImageAsset Include="Media.xcassets\search.imageset\search.png">
       <Visible>false</Visible>
     </ImageAsset>
+        <ImageAsset Include="Media.xcassets\bg-free.imageset\bg-free.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Media.xcassets\search.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
