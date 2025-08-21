@@ -14,7 +14,7 @@
                    FontSize="Small" 
                    TextColor="White" 
                    HorizontalOptions="Center" 
-                   VerticalTextAlignment="Center"/>
+                   VerticalTextAlignment="Center" />
             
             <Label Text="{Binding labelAppVersion}"
                    FontSize="Small" 
