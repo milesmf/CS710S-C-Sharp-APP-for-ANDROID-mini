@@ -46,7 +46,6 @@ namespace BLE.Client.ViewModels
 
             OnReadWriteButtonCommand = new Command(OnReadWriteButtonClicked);
             OnInventoryButtonCommand = new Command(OnInventoryButtonClicked);
-			OnRegisterTagButtonCommand = new Command(OnRegisterTagButtonClicked);
 			OnSpecialFuncButtonCommand = new Command(OnSpecialFuncButtonClicked);
 			OnGeigerButtonCommand = new Command(OnGeigerButtonClicked);
 			OnSettingButtonCommand = new Command(OnSettingButtonClicked);
@@ -386,21 +385,6 @@ namespace BLE.Client.ViewModels
             //ShowViewModel<ViewModelReadWrite>(new MvxBundle());
             var navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
             navigation.Navigate<ViewModelReadWrite>(new MvxBundle());
-        }
-
-		public ICommand OnRegisterTagButtonCommand { protected set; get; }
-
-		void OnRegisterTagButtonClicked()
-		{
-            if (BleMvxApplication._reader.Status == CSLibrary.HighLevelInterface.READERSTATE.DISCONNECT)
-            {
-                ShowConnectionWarringMessage();
-                return;
-            }
-
-            //ShowViewModel<ViewModelRegisterTag>(new MvxBundle());
-            var navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
-            navigation.Navigate<ViewModelRegisterTag>(new MvxBundle());
         }
 
 		public ICommand OnSpecialFuncButtonCommand { protected set; get; }
