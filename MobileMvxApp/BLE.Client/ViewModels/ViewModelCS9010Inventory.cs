@@ -150,7 +150,7 @@ namespace BLE.Client.ViewModels
             {
                 BleMvxApplication._SELECT_EPC = value.EPC;
                 //ShowViewModel<ViewModelRFMicroReadTemp>(new MvxBundle());
-                _navigation.Navigate<ViewModelRFMicroReadTemp>(new MvxBundle());
+                // _navigation.Navigate<ViewModelRFMicroReadTemp>(new MvxBundle());
             }
         }
 
