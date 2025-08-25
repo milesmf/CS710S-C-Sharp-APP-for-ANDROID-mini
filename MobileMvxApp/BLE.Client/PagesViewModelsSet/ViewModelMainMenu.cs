@@ -50,7 +50,6 @@ namespace BLE.Client.ViewModels
 			OnGeigerButtonCommand = new Command(OnGeigerButtonClicked);
 			OnSettingButtonCommand = new Command(OnSettingButtonClicked);
 			OnSecurityButtonCommand = new Command(OnSecurityButtonClicked);
-			OnFilterButtonCommand = new Command(OnFilterButtonClicked);
             OnConnectButtonCommand = new Command(OnConnectButtonClicked);
 
             GetPermission();
@@ -452,21 +451,6 @@ namespace BLE.Client.ViewModels
             //ShowViewModel<ViewModelSecurity>(new MvxBundle());
             var navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
             navigation.Navigate<ViewModelSecurityKill>(new MvxBundle());
-        }
-
-		public ICommand OnFilterButtonCommand { protected set; get; }
-
-		void OnFilterButtonClicked()
-		{
-            if (BleMvxApplication._reader.Status == CSLibrary.HighLevelInterface.READERSTATE.DISCONNECT)
-            {
-                ShowConnectionWarringMessage();
-                return;
-            }
-
-            //ShowViewModel<ViewModelFilter>(new MvxBundle());
-            var navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
-            navigation.Navigate<ViewModelFilter>(new MvxBundle());
         }
 
         public ICommand OnConnectButtonCommand { protected set; get; }
