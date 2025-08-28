@@ -1,18 +1,18 @@
-# C# CS710S MvvmCross App for iOS, Android and UWP
+# C# CS710S MvvmCross App for Android
 
 CS710S Xamarin C# Bluetooth Demo App and SDK 
 
 - .NET Standard 2.0 and MvvmCross 7
-- Support implementations on iOS and Android platform
+- Support implementations on Android platform
 
-This application provides demonstrations to the programming interface made available on the CS710S handheld reader for configuring, controlling, and accessing the RFID reader.  The development was based on the unified CS710S C# Callback-based API that made available on different CSL readers.  This API is applicable to both iPhone iOS and Android environment.  
+This application provides demonstrations to the programming interface made available on the CS710S handheld reader for configuring, controlling, and accessing the RFID reader.  The development was based on the unified CS710S C# Callback-based API that made available on different CSL readers.  This API is applicable to Android environment.  
 
 [Product Information](https://www.convergence.com.hk/CS710S/)
 <br>
 
 ## Pre-requisite
 
-The build environment consists of tools and the corresponding configurations of the Visual Studio 2022(Windows) or Visual Studio 2019(Mac).  It is expected that the system integrator or the software system programming house will be developing the applications on Visual Studio 2019(Windows) or Visual Studio 2019(Mac).  With this tool, typically he has to write programs on the PC/Mac.  The following are needed to set up the build environment.
+The build environment consists of tools and the corresponding configurations of the Visual Studio 2022(Windows).  It is expected that the system integrator or the software system programming house will be developing the applications on Visual Studio 2022(Windows).  With this tool, typically he has to write programs on the PC.  The following are needed to set up the build environment.
 
 ## Basic configuration on PC
 
@@ -22,7 +22,7 @@ Operating System requirement:
 Software package required:
 -	Microsoft Visual Studio 2022
 
-To build demo application successfully, you need to install Microsoft Visual Studio 2019 or above. For more detailed information, please go to [Microsoft webpage](https:/docs.microsoft.com/en-us/visualstudio/welcome-to-visual-studio).
+To build demo application successfully, you need to install Microsoft Visual Studio 2022 or above. For more detailed information, please go to [Microsoft webpage](https://docs.microsoft.com/en-us/visualstudio/welcome-to-visual-studio).
 <br><br>
 [Visual Studio 2019](https://www.visualstudio.com/zh-hant/vs/whatsnew/)
 
@@ -30,23 +30,14 @@ In Visual Studio, you need to use the Visual Studio Installer to add the Xamarin
 
 <img src="app_img/CS108-DotnetMobileDev.png" width="800"/> <br><br>
 
-## Basic Configuration on Mac
+To run the application on a desktop device, Visual Studio 2022 provides emulator capabilities for Android, supporting the x86_64 architecture. Ensure the project configuration in `BLE.Client.Droid.csproj` includes the following in the `<PropertyGroup>` for emulator compatibility:
 
-Operating System requirement:
--	Mac OS 12 (English)
-
-Software package required:
--	Microsoft Visual Studio 2019 for MAC
--	Xcode 14
-
-To build demo application successfully, you need to install Visual Studio 2019 or above. For more detailed information, please go to [Xamarin webpage](https://www.xamarin.com/).
-<br><br>
-[Xamarin]https://www.xamarin.com/platform
-<br><br>
+```xml
+<AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86_64</AndroidSupportedAbis>
+```
 
 ## Project Files
-1. CS710S-C-Sharp-APP-for-iOS-ANDROID.sln for Android and iOS platform (BLE.Clinet Target framework set to .net Standard 2.1)
-2. CS710S-C-Sharp-APP-for-UWP.sln for Windows UWP platform (BLE.Clinet Target framework set to .net Standard 2.0)
+1. CS710S-C-Sharp-APP-for-ANDROID.sln for Android platform (BLE.Clinet Target framework set to .net Standard 2.1)
 <br><br>
 
 ## Callback-based API Library

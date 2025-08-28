@@ -1,0 +1,70 @@
+{
+  "input": {
+    "maxFileSize": 50000000
+  },
+  "output": {
+    "filePath": "CS710S-C-Sharp-ENTIRE-CONTEXT.txt",
+    "style": "xml",
+    "parsableStyle": true,
+    "compress": false,
+    "headerText": "This file contains the packed CS710S Android codebase for AI analysis, including C# source, project files, and documentation.",
+    "instructionFilePath": "repomix-instruction.md",
+    "fileSummary": true,
+    "directoryStructure": true,
+    "files": true,
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "showLineNumbers": false,
+    "truncateBase64": true,
+    "copyToClipboard": false,
+    "includeEmptyDirectories": false,
+    "topFilesLength": 5,
+    "tokenCountTree": 1000,
+    "git": {
+      "sortByChanges": true,
+      "sortByChangesMaxCommits": 100,
+      "includeDiffs": false,
+      "includeLogs": true,
+      "includeLogsCount": 50
+    }
+  },
+  "include": [
+    "**/*.cs",
+    "**/*.csproj",
+    "**/*.sln",
+    "**/*.md",
+    "**/*.txt",
+    "**/*.xml",
+    "**/*.axml"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/bin/**",
+      "**/obj/**",
+      "**/Debug/**",
+      "**/Release/**",
+      "**/*.suo",
+      "**/*.user",
+      "**/*.cache",
+      "**/*.pdb",
+      "**/*.dll",
+      "**/*.log",
+      "**/*.tlog",
+      "**/*.db",
+      "**/*.sdf",
+      "**/*.opensdf",
+      "**/*.VC.db",
+      "**/.vs/**",
+      "**/TestResult*/**",
+      "**/node_modules/**"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  },
+  "tokenCount": {
+    "encoding": "o200k_base"
+  }
+}
