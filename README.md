@@ -82,26 +82,44 @@ Please refer to the documentation under the folder Library/CSLibrary/Readme.txt 
 
 ---
 
-## AI Tools and Workflow in Development
+# AI Tools & Workflow in Development  
 
-This project leveraged AI tools to assist in codebase analysis, refactoring, and pruning, ensuring a methodical and safe approach to maintaining the repository. Below is an overview of the tools used and the general workflow, aimed at helping new developers replicate or extend similar processes.
+This project applied AI tools to assist in code analysis, refactoring, and pruning, ensuring a structured and safe process for maintaining the repository. The workflow emphasizes repeatability and clarity for both new and experienced developers.  
 
-### AI Tools Used
-- **Grok (by xAI)**: The primary LLM for this development cycle, chosen for its strong reasoning capabilities, handling of large contexts (e.g., ~9M+ character codebase merges), and tools integration (e.g., code execution, web search). Grok excelled in "prospecting" (deep traversal and dependency mapping) as per the `repomix-instruction.md`, providing iterative refinements, file tree visualizations, and granular pruning instructions. It was used for:
-  - Analyzing repository structure from `repomix-output.txt`.
-  - Generating safe, verifiable prune steps (e.g., feature-by-feature removal with backups, global searches, and build verifications).
-  - Creating reusable templates (e.g., file trees with ❌/✅ emojis and [NOTE] prefixes).
-  - Alternatives: For similar tasks, ChatGPT (via OpenAI) or Claude (via Anthropic) could substitute, as they support large contexts and structured outputs. Claude is particularly strong for code parsing due to its Markdown/XML handling, while ChatGPT offers broader integration with IDE plugins.
+## AI Tools Used  
+- **Grok (by xAI):** Primary LLM chosen for:  
+  - Handling large contexts (e.g., ~9M+ character merges).  
+  - Deep repository “prospecting” (dependency mapping, structure analysis from `CS710S-C-Sharp-ENTIRE-CONTEXT.txt` or `CS710S-C-Sharp-ENTIRE-CONTEXT.xml`).  
+  - Generating safe prune steps with backups, global searches, and build verifications.  
+  - Creating reusable templates (file trees with ❌ modify/delete, ✅ keep, and [NOTE] context).  
+- **Alternatives:**  
+  - **ChatGPT (OpenAI):** Broader IDE integration.  
+  - **Claude (Anthropic):** Stronger for structured/markup parsing.  
 
-### General Workflow
-1. **Preparation**: Backup the repo (e.g., `git branch prune-<feature>`) and load in Visual Studio (2022 for Windows or VS for Mac). Use `repomix-output.txt` for a merged codebase view.
-2. **AI-Assisted Prospecting**: Query the LLM with the full context (e.g., repository structure, preserved/pruned features from PageMainMenu.xaml diffs). Request a file tree output for traversal, marking changes with ❌ (modify/delete) or ✅ (untouched), and [NOTE] for details (what/why/verify).
-3. **Iterative Pruning**: Target one feature at a time (e.g., "Register Tag"). Use LLM to:
-   - Trace dependencies (primary: files; secondary: nav/commands; tertiary: shared/events; quaternary+: resources/tests/docs).
-   - Suggest line-by-line cuts, .csproj edits, and global searches (e.g., "Find in Files" for feature names).
-   - Ensure safety: Remove usings, event refs, and test for build errors.
-4. **Verification**: Rebuild (Ctrl+Shift+B), run on Android emulator/device, test preserved features (e.g., Inventory, Geiger), check logs, and commit incrementally.
-5. **Refinements**: Feed LLM feedback (e.g., "Add more depth to edge cases") for iterations, optimizing outputs (e.g., visual file trees).
-6. **Documentation**: Update README.md and create supporting files (e.g., PROMPTS.md) via LLM for reusability.
+## General Workflow  
+1. **Preparation**  
+   - Backup repo (`git branch prune-<feature>`).  
+   - Load in Visual Studio (Windows/Mac).  
 
-This workflow reduced bloat while keeping the codebase 100% compilable and functional. For new developers: Start with small prunes, use VS tools for searches, and leverage LLMs for dependency mapping to avoid regressions.
+2. **AI-Assisted Prospecting**  
+   - Upload `CS710S-C-Sharp-ENTIRE-CONTEXT.txt` or `CS710S-C-Sharp-ENTIRE-CONTEXT.xml` to your preferred LLM.
+   - Query LLM with specific context (structure, preserved/pruned features, diffs).  
+
+3. **Iterative Pruning**  
+   - Target one feature at a time (e.g., “Register Tag”).  
+   - Trace dependencies:  
+     - Primary, Secondary, Tertiary, etc: ensure all nested references are cleanly removed:
+        - Reference prompts from (`prompts.md`)
+     - Remove usings, update refs, confirm builds remain clean.  
+
+4. **Verification**  
+   - Rebuild
+   - Test preserved features, ensure application runs as expected.
+   - Run on emulator/device, check logs.
+   - Publish incremental commits ensuring backtracking is possible.  
+
+6. **Documentation**  
+   - Update README and related supporting files.  
+   - Review and borrow prompts/templates from (`prompts.md`).  
+
+---
