@@ -1,13 +1,13 @@
 {
   "input": {
-    "maxFileSize": 50000000
+    "maxFileSize": 100000000
   },
   "output": {
-    "filePath": "CS710S-C-Sharp-ENTIRE-CONTEXT.txt",
+    "filePath": "CS710S-C-Sharp-ENTIRE-CONTEXT.xml",
     "style": "xml",
     "parsableStyle": true,
-    "compress": false,
-    "headerText": "This file contains the packed CS710S Android codebase for AI analysis, including C# source, project files, and documentation.",
+    "compress": true,
+    "headerText": "Packed CS710S Android codebase for AI analysis of BLE/RFID flows, including C# source, projects, and docs.",
     "instructionFilePath": "repomix-instruction.md",
     "fileSummary": true,
     "directoryStructure": true,
@@ -15,27 +15,26 @@
     "removeComments": false,
     "removeEmptyLines": false,
     "showLineNumbers": false,
-    "truncateBase64": true,
+    "truncateBase64": false,
     "copyToClipboard": false,
     "includeEmptyDirectories": false,
     "topFilesLength": 5,
-    "tokenCountTree": 1000,
-    "git": {
-      "sortByChanges": true,
-      "sortByChangesMaxCommits": 100,
-      "includeDiffs": false,
-      "includeLogs": true,
-      "includeLogsCount": 50
-    }
+    "tokenCountTree": 1000
   },
   "include": [
-    "**/*.cs",
-    "**/*.csproj",
-    "**/*.sln",
-    "**/*.md",
-    "**/*.txt",
-    "**/*.xml",
-    "**/*.axml"
+    "CS710S-C-Sharp-APP-for-ANDROID.sln",
+    "Library/CSLibrary/*.csproj",
+    "MobileMvxApp/BLE.Client/*.csproj",
+    "MobileMvxApp/BLE.Client.Droid/*.csproj",
+    "Library/CSLibrary/Source/**/*.cs",
+    "MobileMvxApp/BLE.Client/**/*.cs",
+    "MobileMvxApp/BLE.Client.Droid/**/*.cs",
+    "MobileMvxApp/BLE.Client.Droid/Properties/AndroidManifest.xml",
+    "MobileMvxApp/BLE.Client.Droid/Resources/values/*.xml",
+    "MobileMvxApp/BLE.Client.Droid/Resources/layout/*.axml",
+    "README.md",
+    "repomix-instruction.md",
+    "repomix.config.json"
   ],
   "ignore": {
     "useGitignore": true,
@@ -45,26 +44,47 @@
       "**/obj/**",
       "**/Debug/**",
       "**/Release/**",
-      "**/*.suo",
-      "**/*.user",
-      "**/*.cache",
-      "**/*.pdb",
-      "**/*.dll",
-      "**/*.log",
-      "**/*.tlog",
-      "**/*.db",
-      "**/*.sdf",
-      "**/*.opensdf",
-      "**/*.VC.db",
       "**/.vs/**",
       "**/TestResult*/**",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "**/*.dll",
+      "**/*.so",
+      "**/*.a",
+      "**/*.jar",
+      "**/*.aar",
+      "**/*.nupkg",
+      "**/*.keystore",
+      "**/*.apk",
+      "**/*.aab",
+      "**/*.zip",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.gif",
+      "**/*.pdf",
+      "**/*.user",
+      "**/*.userprefs",
+      "**/*.csproj.user",
+      "**/Resource.designer.cs",
+      "**/*.g.cs",
+      "**/*.Designer.cs"
     ]
   },
   "security": {
-    "enableSecurityCheck": true
+    "enableSecurityCheck": false
   },
   "tokenCount": {
     "encoding": "o200k_base"
+  },
+  "git": {
+    "includeLogs": false,
+    "sortByChanges": false,
+    "sortByChangesMaxCommits": 0,
+    "includeDiffs": false,
+    "includeLogsCount": 0
+  },
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-08-29",
+    "description": "Configuration for packing CS710S Android codebase for AI analysis."
   }
 }
