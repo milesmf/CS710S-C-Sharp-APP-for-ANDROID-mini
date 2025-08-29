@@ -84,17 +84,14 @@ Please refer to the documentation under the folder Library/CSLibrary/Readme.txt 
 
 # AI Tools & Workflow in Development  
 
-This project applied AI tools to assist in code analysis, refactoring, and pruning, ensuring a structured and safe process for maintaining the repository. The workflow emphasizes repeatability and clarity for both new and experienced developers.  
+This project applied AI tools to assist in code analysis, refactoring, and pruning, ensuring a structured and safe process for maintaining the repository. The workflow emphasizes repeatability and clarity for both new and experienced developers.
 
-## AI Tools Used  
-- **Grok (by xAI):** Primary LLM chosen for:  
-  - Handling large contexts (e.g., ~9M+ character merges).  
+## AI Tools
+  - **Grok (by xAI)**, **Claude (Anthropic)**, or **ChatGPT (OpenAI)**
+
+## AI Objectives  
+  - Handling large contexts (e.g., ~9M+ character repomixed codebase).
   - Deep repository “prospecting” (dependency mapping, structure analysis from `CS710S-C-Sharp-ENTIRE-CONTEXT.txt` or `CS710S-C-Sharp-ENTIRE-CONTEXT.xml`).  
-  - Generating safe prune steps with backups, global searches, and build verifications.  
-  - Creating reusable templates (file trees with ❌ modify/delete, ✅ keep, and [NOTE] context).  
-- **Alternatives:**  
-  - **ChatGPT (OpenAI):** Broader IDE integration.  
-  - **Claude (Anthropic):** Stronger for structured/markup parsing.  
 
 ## General Workflow  
 1. **Preparation**  
