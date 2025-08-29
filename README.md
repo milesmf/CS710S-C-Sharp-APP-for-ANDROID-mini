@@ -100,17 +100,17 @@ This project applied AI tools to assist in code analysis, refactoring, and pruni
 
 2. **AI-Assisted Prospecting**  
    - Upload `CS710S-C-Sharp-ENTIRE-CONTEXT.txt` or `CS710S-C-Sharp-ENTIRE-CONTEXT.xml` to your preferred LLM.
-   - Query LLM with specific context (structure, preserved/pruned features, diffs).  
+   - Query LLM with specific context (see prompts from `prompts.md`).  
 
 3. **Iterative Pruning**  
-   - Target one feature at a time (e.g., “Register Tag”).  
-   - Trace dependencies:  
-     - Primary, Secondary, Tertiary, etc: ensure all nested references are cleanly removed:
-        - Reference prompts from (`prompts.md`)
-     - Remove usings, update refs, confirm builds remain clean.  
+   - Target one feature at a time (e.g., “Register Tag”).
+   - Trace dependencies:
+     - Primary, Secondary, Tertiary, etc: ensure all nested references are cleanly acknowledged
+     - Holisticaly remove usings, update refs
 
 4. **Verification**  
    - Rebuild
+   - Confirm builds remains clean
    - Test preserved features, ensure application runs as expected.
    - Run on emulator/device, check logs.
    - Publish incremental commits ensuring backtracking is possible.  
@@ -118,6 +118,12 @@ This project applied AI tools to assist in code analysis, refactoring, and pruni
 6. **Documentation**  
    - Update README and related supporting files.  
    - Review and borrow prompts/templates from (`prompts.md`).  
+
+---
+
+## Notes on Visual Studio (2022) Workflow (With Emulator)
+1. **Clean the Solution**: In Visual Studio 2022, go to `Build` > `Clean Solution` to remove all compiled files and ensure a fresh build.
+2. **Build or Deploy to Emulator**: Select `Build` > `Rebuild Solution` to compile the project, or configure the emulator (e.g., x86_64) and choose `Build` > `Deploy` to run directly on the emulator.
 
 ---
 
